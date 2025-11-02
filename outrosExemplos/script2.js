@@ -2,71 +2,46 @@
 document.addEventListener('DOMContentLoaded', function() {
     
     //
-    // --- LÓGICA DO CARROSSEL PRINCIPAL (COM AUTO-PLAY) ---
+    // --- LÓGICA DO CARROSSEL PRINCIPAL (EXISTENTE) ---
     //
     const mainSlides = document.querySelectorAll('.carousel-slide');
     const mainPrevBtn = document.querySelector('.carousel-control.prev');
     const mainNextBtn = document.querySelector('.carousel-control.next');
     
     let mainCurrentSlide = 0;
-    let carouselInterval; // Variável para guardar o timer
 
     // Função para mostrar o slide principal
-    function showMainSlide(index, resetTimer = true) {
+    function showMainSlide(index) {
         mainSlides.forEach(slide => {
             slide.classList.remove('active');
         });
         
         if (index >= mainSlides.length) {
-            mainCurrentSlide = 0; // Volta ao início
+            mainCurrentSlide = 0;
         } else if (index < 0) {
-            mainCurrentSlide = mainSlides.length - 1; // Vai para o fim
+            mainCurrentSlide = mainSlides.length - 1;
         } else {
             mainCurrentSlide = index;
         }
 
         mainSlides[mainCurrentSlide].classList.add('active');
-        
-        // Se a função foi chamada por um clique humano, reinicia o timer
-        if (resetTimer) {
-            resetCarouselInterval();
-        }
     }
 
-    // Função para avançar o slide automaticamente
-    function autoAdvanceSlide() {
-        // Chama showMainSlide sem reiniciar o timer
-        showMainSlide(mainCurrentSlide + 1, false);
-    }
-
-    // Função para iniciar o auto-play
-    function startCarouselAutoPlay() {
-        // Define um intervalo para chamar autoAdvanceSlide a cada 5 segundos (5000 milissegundos)
-        carouselInterval = setInterval(autoAdvanceSlide, 5000); 
-    }
-
-    // Função para parar e reiniciar o timer (usada em cliques manuais)
-    function resetCarouselInterval() {
-        clearInterval(carouselInterval); // Limpa o timer antigo
-        startCarouselAutoPlay(); // Inicia um novo timer
-    }
-
-    // Event Listeners dos botões principais
+    // Event Listeners (escuta os cliques nos botões)
     mainNextBtn.addEventListener('click', function() {
-        showMainSlide(mainCurrentSlide + 1, true); // true = foi clique, resetar timer
+        showMainSlide(mainCurrentSlide + 1);
     });
 
     mainPrevBtn.addEventListener('click', function() {
-        showMainSlide(mainCurrentSlide - 1, true); // true = foi clique, resetar timer
+        showMainSlide(mainCurrentSlide - 1);
     });
 
-    // Inicia o carrossel no primeiro slide e liga o auto-play
-    showMainSlide(mainCurrentSlide, false);
-    startCarouselAutoPlay();
+    // Inicia o carrossel no primeiro slide
+    showMainSlide(mainCurrentSlide);
 
 
     //
-    // --- LÓGICA DO MODAL (POP-UP) DE PRODUTOS ---
+    // --- NOVA LÓGICA DO MODAL (POP-UP) ---
     //
 
     // Referências aos elementos do Modal
@@ -87,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Adiciona um evento de clique em CADA card
     productCards.forEach(card => {
         card.addEventListener('click', () => {
-            // Pega os dados que guardamos no HTML (data-name, data-price, data-images)
+            // Pega os dados que guardamos no HTML
             const name = card.dataset.name;
             const price = card.dataset.price;
             const images = JSON.parse(card.dataset.images); // Converte a string de volta para um array

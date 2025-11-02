@@ -70,14 +70,13 @@ header nav ul li a:hover {
     color: var(--rosa-detalhe);
 }
 
-/* Carrossel Principal - ATUALIZADO */
+/* Carrossel */
 .carousel {
     position: relative;
     width: 100%;
     max-height: 450px;
     overflow: hidden;
-    /* Fundo rosa que aparece se a imagem não preencher */
-    background-color: var(--rosa-listras); 
+    background-color: var(--rosa-listras);
 }
 
 .carousel-slide {
@@ -93,8 +92,7 @@ header nav ul li a:hover {
 .carousel-slide img {
     width: 100%;
     height: 450px;
-    /* MUDANÇA: 'contain' mostra a imagem inteira, sem cortar */
-    object-fit: contain; 
+    object-fit: cover; /* Garante que a imagem cubra o espaço */
 }
 
 .carousel-control {
@@ -110,7 +108,6 @@ header nav ul li a:hover {
     border-radius: 50%;
     user-select: none;
     transition: background-color 0.3s ease;
-    z-index: 10;
 }
 
 .carousel-control:hover {
@@ -172,7 +169,6 @@ h3 {
     box-shadow: 0 4px 10px rgba(107, 79, 75, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: center;
-    cursor: pointer; /* Indica que é clicável */
 }
 
 .product-card:hover {
@@ -191,17 +187,16 @@ h3 {
     font-family: 'Pacifico', cursive;
     font-size: 1.5rem;
     color: var(--marrom-texto);
-    margin: 15px 0 5px;
+    margin-top: 15px;
 }
 
 .product-card p {
-    font-size: 1.2rem;
-    font-weight: 700;
+    font-size: 0.9rem;
     padding: 0 15px 15px;
-    color: var(--rosa-detalhe);
+    color: #888;
 }
 
-/* Rodapé - ATUALIZADO */
+/* Rodapé */
 footer {
     background-color: var(--marrom-texto);
     color: var(--branco);
@@ -211,156 +206,23 @@ footer {
 }
 
 .footer-logo {
-    max-height: 80px; /* <-- TAMANHO AJUSTADO */
+    max-height: 50px;
     margin-bottom: 20px;
-    /* filter: brightness(0) invert(1); */
+    filter: brightness(0) invert(1); /* Deixa a logo branca */
 }
 
-.footer-info p { 
-    margin-bottom: 10px; 
-    font-size: 1.1rem; 
+.footer-info p {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
 }
 
-/* ESTILO PARA O BOTÃO DE WHATSAPP */
-.whatsapp-button {
-    display: inline-block; 
-    background-color: var(--rosa-detalhe); 
-    color: var(--branco);
-    padding: 12px 25px; 
-    border-radius: 30px; 
+.footer-info a {
+    color: var(--amarelo-claro);
     text-decoration: none;
     font-weight: 700;
     font-size: 1.1rem;
-    margin-top: 15px; 
-    margin-bottom: 25px; 
-    transition: background-color 0.3s ease;
 }
 
-.whatsapp-button:hover {
-    background-color: #d65b93; 
-    text-decoration: none;
-}
-
-/* ESTILO ATUALIZADO PARA O LINK DO INSTAGRAM */
-.instagram-link {
-    display: block; 
-    color: var(--amarelo-claro); 
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 1.1rem;
-    transition: color 0.3s ease;
-}
-
-.instagram-link:hover {
-    color: var(--branco); 
-}
-
-.instagram-link strong {
-    font-size: 1.15rem;
+.footer-info a:hover {
     text-decoration: underline;
-}
-
-/* ESTILOS DO MODAL (POP-UP) DO PRODUTO */
-.modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(60, 40, 40, 0.8);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-}
-
-.modal-content {
-    background-color: var(--branco);
-    padding: 20px;
-    border-radius: 12px;
-    width: 90%;
-    max-width: 600px;
-    max-height: 90vh;
-    overflow-y: auto;
-    position: relative;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-}
-
-.modal-close-button {
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    font-size: 2.5rem;
-    color: #aaa;
-    cursor: pointer;
-    line-height: 1;
-    z-index: 1010;
-}
-.modal-close-button:hover {
-    color: var(--marrom-texto);
-}
-
-/* Carrossel interno do Modal */
-.modal-slider {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-    background-color: var(--rosa-fundo);
-    border-radius: 8px;
-}
-
-#modal-image-container {
-    position: relative;
-    width: 100%;
-    height: 400px;
-}
-
-.modal-slide {
-    display: none;
-    text-align: center;
-    width: 100%;
-    height: 100%;
-}
-.modal-slide.active {
-    display: block;
-}
-.modal-slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
-
-.modal-control {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(255, 255, 255, 0.8);
-    border: none;
-    color: var(--marrom-texto);
-    font-size: 1.5rem;
-    padding: 8px 12px;
-    cursor: pointer;
-    border-radius: 50%;
-    user-select: none;
-    z-index: 10;
-}
-.modal-control.prev { left: 10px; }
-.modal-control.next { right: 10px; }
-
-/* Informações do produto no modal */
-.modal-info {
-    text-align: center;
-    padding: 20px 0 0;
-}
-.modal-info h3 {
-    font-family: 'Pacifico', cursive;
-    font-size: 2rem;
-    color: var(--marrom-texto);
-    margin: 0;
-}
-.modal-info p {
-    font-size: 1.5rem;
-    color: var(--rosa-detalhe);
-    font-weight: 700;
-    margin-top: 10px;
 }

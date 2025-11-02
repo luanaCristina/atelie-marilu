@@ -1,0 +1,228 @@
+/* Importação das fontes */
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Nunito:wght@400;700&display=swap');
+
+/* Variáveis de Cor (baseadas na logo) */
+:root {
+    --rosa-fundo: #fceef2; /* Rosa bem clarinho do fundo */
+    --rosa-listras: #f7d9e3; /* Rosa das listras */
+    --marrom-texto: #6b4f4b; /* Marrom do "Marilu" */
+    --rosa-detalhe: #f06ea9; /* Rosa da borboleta */
+    --amarelo-claro: #fdf5c1; /* Amarelo da roupinha */
+    --branco: #ffffff;
+}
+
+/* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    background-color: var(--rosa-fundo);
+    color: var(--marrom-texto);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Cabeçalho */
+header {
+    background-color: var(--branco);
+    padding: 15px 0;
+    border-bottom: 2px solid var(--rosa-listras);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    max-height: 70px;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+}
+
+header nav ul li {
+    margin-left: 25px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: var(--marrom-texto);
+    font-weight: 700;
+    font-size: 1.1em;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: var(--rosa-detalhe);
+}
+
+/* Carrossel */
+.carousel {
+    position: relative;
+    width: 100%;
+    max-height: 450px;
+    overflow: hidden;
+    background-color: var(--rosa-listras);
+}
+
+.carousel-slide {
+    display: none;
+    width: 100%;
+    text-align: center;
+}
+
+.carousel-slide.active {
+    display: block;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover; /* Garante que a imagem cubra o espaço */
+}
+
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.7);
+    border: none;
+    color: var(--marrom-texto);
+    font-size: 2rem;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 50%;
+    user-select: none;
+    transition: background-color 0.3s ease;
+}
+
+.carousel-control:hover {
+    background-color: var(--branco);
+}
+
+.carousel-control.prev {
+    left: 15px;
+}
+
+.carousel-control.next {
+    right: 15px;
+}
+
+/* Seções de Conteúdo */
+section {
+    padding: 40px 0;
+}
+
+section.descricao {
+    text-align: center;
+    background-color: var(--amarelo-claro);
+    padding: 30px 20px;
+    border-radius: 10px;
+    margin: 30px auto;
+    max-width: 900px;
+}
+
+h2, h3 {
+    font-family: 'Pacifico', cursive;
+    color: var(--marrom-texto);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 2.8rem;
+}
+
+h3 {
+    font-size: 2.2rem;
+    color: var(--rosa-detalhe);
+    border-top: 2px dashed var(--rosa-listras);
+    padding-top: 25px;
+    margin-top: 30px;
+}
+
+/* Grid de Produtos */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.product-card {
+    background: var(--branco);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(107, 79, 75, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(107, 79, 75, 0.2);
+}
+
+.product-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+}
+
+.product-card h4 {
+    font-family: 'Pacifico', cursive;
+    font-size: 1.5rem;
+    color: var(--marrom-texto);
+    margin-top: 15px;
+}
+
+.product-card p {
+    font-size: 0.9rem;
+    padding: 0 15px 15px;
+    color: #888;
+}
+
+/* Rodapé */
+footer {
+    background-color: var(--marrom-texto);
+    color: var(--branco);
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 40px;
+}
+
+.footer-logo {
+    max-height: 80px;
+    margin-bottom: 20px;
+    filter: brightness(0) invert(1); /* Deixa a logo branca */
+}
+
+.footer-info p {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.footer-info a {
+    color: var(--amarelo-claro);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.footer-info a:hover {
+    text-decoration: underline;
+}

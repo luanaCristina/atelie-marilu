@@ -1,5 +1,5 @@
 # 🎀 Ateliê Marilu - Site Vitrine
-https://luanacristina.github.io/atelie-marilu/ 
+Link do site: https://luanacristina.github.io/atelie-marilu/ 
 
 ![Logo Ateliê Marilu](images/logoCircular.png)
 
@@ -29,4 +29,12 @@ Este projeto é um site **estático**, o que significa que todo o conteúdo (pro
 ---
 
 ## 📂 Estrutura de Arquivos
-/ ├── index.html (Arquivo principal com todo o conteúdo) ├── style.css (Arquivo de estilos para layout e 3D) ├── script.js (Lógica do Carrossel 3D e do Modal) ├── images/ │ ├── logoCircular.png │ ├── kit01-01.jpeg │ ├── item01.jpeg │ └── ... (todas as outras imagens de produtos e carrossel) └── README.md (Este arquivo)
+- ├── index.html (Arquivo principal com todo o conteúdo)
+- ├── style.css (Arquivo de estilos para layout e 3D)
+- ├── script.js (Lógica do Carrossel 3D e do Modal)
+- ├── images/ │
+-   ├── logoCircular.png │
+-   ├── kit01-01.jpeg │
+-   ├── item01.jpeg │
+-   └── ... (todas as outras imagens de produtos e carrossel)
+- └── README.md (Este arquivo)

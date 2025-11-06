@@ -223,6 +223,84 @@ h3 {
     padding: 0 15px 15px;
     color: var(--rosa-detalhe);
 }
+
+/* --- NOVOS ESTILOS PARA A SEÇÃO "SOBRE" --- */
+#sobre {
+    background-color: var(--branco);
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 10px rgba(107, 79, 75, 0.1);
+}
+
+#sobre h2 {
+    font-size: 2.8rem;
+    margin-bottom: 30px;
+}
+
+/* Títulos H3 dentro da seção sobre */
+#sobre h3 {
+    font-size: 2.2rem;
+    color: var(--rosa-detalhe);
+    border-top: 2px dashed var(--rosa-listras);
+    padding-top: 25px;
+    margin-top: 20px;
+    text-align: left; /* Alinha à esquerda */
+}
+
+/* Remove a borda do primeiro H3 */
+#sobre .sobre-coluna:first-child h3:first-child {
+    margin-top: 0;
+    border-top: none;
+    padding-top: 0;
+}
+
+#sobre h4 {
+    font-family: 'Nunito', sans-serif; /* Fonte normal, não 'Pacifico' */
+    font-weight: 700;
+    font-size: 1.3rem;
+    color: var(--marrom-texto);
+    margin-top: 20px;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+#sobre p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+#sobre ul {
+    list-style-position: inside;
+    padding-left: 10px;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+#sobre li {
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+/* Layout em colunas para desktop */
+@media (min-width: 769px) {
+    .sobre-content {
+        display: flex;
+        gap: 40px; /* Espaçamento entre colunas */
+    }
+    .sobre-coluna {
+        flex: 1; /* Faz as colunas terem larguras iguais */
+        min-width: 0; /* Previne overflow */
+    }
+    /* A primeira coluna (Naninha) será maior */
+    .sobre-coluna:first-child {
+        flex: 1.5;
+    }
+}
+/* --- FIM DA SEÇÃO SOBRE --- */
+
+/* --- Rodapé ---*/
 footer {
     background-color: var(--marrom-texto);
     color: var(--branco);
